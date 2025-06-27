@@ -1,13 +1,13 @@
-package com.prisc.my_medical_clinic.model.auth;
+package com.prisc.my_medical_clinic.model.auth.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class AuthRequest {
+public class AuthResponse {
 
     private String email;
-    private String password;
+    private String token;
 
 }
