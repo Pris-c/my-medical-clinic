@@ -49,7 +49,7 @@ public class AuthController {
             Authentication authentication =
                     authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
             String email = authentication.getName();
-            User user = new User(email,"");
+            User user = userService.findByEmail(request.getEmail());
             String token = jwtUtil.createToken(user);
             AuthResponse loginRes = new AuthResponse(email,token);
 
