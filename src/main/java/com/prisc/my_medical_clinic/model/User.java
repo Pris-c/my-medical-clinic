@@ -6,9 +6,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -16,8 +14,15 @@ import java.util.UUID;
 @Getter @Setter
 @NoArgsConstructor
 @Table(name = "users")
-
 public class User {
+
+    public User(String name, String email, String password, String nif, Role role) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.nif = nif;
+        this.role = role;
+    }
 
     public User(String email, String password) {
         this.email = email;
@@ -50,7 +55,6 @@ public class User {
     @Pattern(regexp = "\\d{9}", message = "O NIF deve conter apenas números")
     private String nif;
 
-    @NotBlank
     private Role role;
 
 }
