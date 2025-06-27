@@ -68,4 +68,8 @@ public class UserService implements UserDetailsService {
                 user.getEmail(),
                 user.getNif());
     }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 }
