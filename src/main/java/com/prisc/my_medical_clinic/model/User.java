@@ -1,5 +1,6 @@
 package com.prisc.my_medical_clinic.model;
 
+import com.prisc.my_medical_clinic.enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -48,5 +49,8 @@ public class User {
     @Size(min = 9, max = 9, message = "NIF inválido")
     @Pattern(regexp = "\\d{9}", message = "O NIF deve conter apenas números")
     private String nif;
+
+    @NotBlank
+    private Role role;
 
 }
